@@ -17,15 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/login', function () {
+    return view('login');
 });
 
 Auth::routes();
 
-// bejelentkezéssel elérhető oldal
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// jelszó emlékeztető
 Route::post('password.email', [App\Http\Controllers\AccountsController::class, 'validatePasswordRequest']);
 Route::post('password.reset', [App\Http\Controllers\AccountsController::class, 'resetPassword']);
