@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Validator;
+use Illuminate\Support\Str;
+
 
 class AccountsController extends Controller
 {
@@ -51,7 +53,7 @@ class AccountsController extends Controller
         }
     }
 
-    public function resetPassword(Request $request)
+/*     public function resetPassword(Request $request)
     {
         //Validate input
         $validator = Validator::make($request->all(), [
@@ -92,5 +94,5 @@ class AccountsController extends Controller
         } else {
             return redirect()->back()->withErrors(['email' => trans('A Network Error occurred. Please try again.')]);
         }
-    }
+    } */
 }
